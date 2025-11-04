@@ -1,0 +1,51 @@
+{
+  "name": "ReelDine - Food Video Social Network",
+  "short_name": "ReelDine",
+  "description": "Discover, share, and enjoy amazing food content through short videos",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3b82f6",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["food", "social", "entertainment"],
+  "lang": "en-US",
+  "dir": "ltr",
+  "shortcuts": [
+    {
+      "name": "Home Feed",
+      "short_name": "Home",
+      "description": "View latest food videos",
+      "url": "/#/home",
+      "icons": [{ "src": "/icon-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Saved Posts",
+      "short_name": "Saved",
+      "description": "View your saved food posts",
+      "url": "/#/saved",
+      "icons": [{ "src": "/icon-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "AI Features",
+      "short_name": "AI",
+      "description": "Explore AI-powered food features",
+      "url": "/#/ai-features",
+      "icons": [{ "src": "/icon-192x192.png", "sizes": "192x192" }]
+    }
+  ]
+}

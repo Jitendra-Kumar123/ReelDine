@@ -6,24 +6,33 @@ const { v4: uuid } = require("uuid")
 
 
 async function createFood(req, res) {
-    const fileUploadResult = await storageService.uploadFile(req.file.buffer, uuid())
+    try {
+        const fileUploadResult = await storageService.uploadFile(req.file.buffer, uuid())
 
-    const foodItem = await foodModel.create({
-        name: req.body.name,
-        description: req.body.description,
-        video: fileUploadResult.url,
-        foodPartner: req.foodPartner._id
-    })
+        const foodItem = await foodModel.create({
+            name: req.body.name,
+            description: req.body.description,
+            video: fileUploadResult.url,
+            foodPartner: req.foodPartner._id
+        })
 
-    res.status(201).json({
-        message: "food created successfully",
-        food: foodItem
-    })
+        res.status(201).json({
+            message: "food created successfully",
+            food: foodItem
+        })
+    } catch (error) {
+        console.error('Error creating food:', error);
+        res.status(500).json({
+            message: "Error creating food",
+            error: error.message
+        })
+    }
 
 }
 
 async function getFoodItems(req, res) {
     const foodItems = await foodModel.find({})
+
     res.status(200).json({
         message: "Food items fetched successfully",
         foodItems
@@ -115,6 +124,10 @@ async function saveFood(req, res) {
 async function getSaveFood(req, res) {
 
     const user = req.user;
+
+    if (!user) {
+        return res.status(401).json({ message: "User not authenticated" });
+    }
 
     const savedFoods = await saveModel.find({ user: user._id }).populate('food');
 

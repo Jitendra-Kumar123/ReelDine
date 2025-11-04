@@ -6,8 +6,9 @@ import { Link } from 'react-router-dom'
 // - items: Array of video items { _id, video, description, likeCount, savesCount, commentsCount, comments, foodPartner }
 // - onLike: (item) => void | Promise<void>
 // - onSave: (item) => void | Promise<void>
+// - onComment: (item) => void | Promise<void>
 // - emptyMessage: string
-const ReelFeed = ({ items = [], onLike, onSave, emptyMessage = 'No videos yet.' }) => {
+const ReelFeed = ({ items = [], onLike, onSave, onComment, emptyMessage = 'No videos yet.' }) => {
   const videoRefs = useRef(new Map())
 
   useEffect(() => {
@@ -86,7 +87,11 @@ const ReelFeed = ({ items = [], onLike, onSave, emptyMessage = 'No videos yet.' 
                 </div>
 
                 <div className="reel-action-group">
-                  <button className="reel-action" aria-label="Comments">
+                  <button
+                    onClick={onComment ? () => onComment(item) : undefined}
+                    className="reel-action"
+                    aria-label="Comments"
+                  >
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z" />
                     </svg>
