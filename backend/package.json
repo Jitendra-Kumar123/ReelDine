@@ -1,25 +1,52 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "ReelDine - Food Video Sharing Platform Backend",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "NODE_ENV=production node server.js",
+    "dev": "NODE_ENV=development nodemon server.js",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
-  "keywords": [],
+  "keywords": ["food", "video", "social", "mern", "api"],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
     "bcryptjs": "^3.0.2",
+    "compression": "^1.7.4",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "express": "^5.1.0",
+    "express-mongo-sanitize": "^2.2.0",
+    "express-rate-limit": "^7.1.5",
+    "helmet": "^7.1.0",
+    "hpp": "^0.2.3",
     "imagekit": "^6.0.0",
+    "joi": "^17.11.0",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.17.1",
     "multer": "^2.0.2",
-    "uuid": "^11.1.0"
+    "openai": "^4.20.1",
+    "redis": "^4.6.10",
+    "socket.io": "^4.7.4",
+    "uuid": "^11.1.0",
+    "winston": "^3.11.0",
+    "xss-clean": "^0.1.4"
+  },
+  "devDependencies": {
+    "eslint": "^8.55.0",
+    "jest": "^29.7.0",
+    "nodemon": "^3.0.2",
+    "supertest": "^6.3.3"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
   }
 }
