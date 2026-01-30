@@ -53,8 +53,7 @@
 - [ ] GDPR compliance and data export
 - [ ] Content security policy
 - [ ] XSS and CSRF protection
-- [ ] Secure file upload validation
-- [ ] Audit logging
+
 
 
 ## Current Status
