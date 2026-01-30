@@ -44,7 +44,6 @@
 - [ ] Docker containerization
 - [ ] CI/CD pipeline with GitHub Actions
 - [ ] Environment-specific configurations
-- [ ] Monitoring and alerting setup
 
 
 
