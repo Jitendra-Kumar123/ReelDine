@@ -43,9 +43,6 @@
 ## Phase 6: DevOps & Deployment
 - [ ] Docker containerization
 - [ ] CI/CD pipeline with GitHub Actions
-- [ ] Environment-specific configurations
-
-
 
 ## Phase 7: Advanced Features
 - [ ] Push notifications
