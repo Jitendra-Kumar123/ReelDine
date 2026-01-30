@@ -40,7 +40,7 @@
 - [ ] Performance testing setup
 - [ ] Code coverage reporting
 
-## Phase 7: Advanced Features
+## Phase 6: Advanced Features
 - [ ] Push notifications
 - [ ] Social challenges and competitions
 - [ ] Content moderation and reporting
@@ -48,13 +48,6 @@
 - [ ] Multi-language support
 - [ ] Dark mode and accessibility
 - [ ] Payment integration for premium features
-
-## Phase 8: Security & Compliance
-- [ ] GDPR compliance and data export
-- [ ] Content security policy
-- [ ] XSS and CSRF protection
-
-
 
 ## Current Status
 - ✅ Basic MERN stack setup
