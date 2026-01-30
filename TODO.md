@@ -40,10 +40,6 @@
 - [ ] Performance testing setup
 - [ ] Code coverage reporting
 
-## Phase 6: DevOps & Deployment
-
-
-
 ## Phase 7: Advanced Features
 - [ ] Push notifications
 - [ ] Social challenges and competitions
@@ -59,7 +55,7 @@
 - [ ] XSS and CSRF protection
 - [ ] Secure file upload validation
 - [ ] Audit logging
-- [ ] Penetration testing
+
 
 ## Current Status
 - ✅ Basic MERN stack setup
