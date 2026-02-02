@@ -43,7 +43,26 @@ const userSchema = new mongoose.Schema({
     preferences: {
         cuisines: [{ type: String }],
         dietaryRestrictions: [{ type: String }],
-        favoriteIngredients: [{ type: String }]
+        favoriteIngredients: [{ type: String }],
+        theme: {
+            type: String,
+            enum: ['light', 'dark', 'auto'],
+            default: 'light'
+        },
+        notifications: {
+            email: { type: Boolean, default: true },
+            push: { type: Boolean, default: true },
+            sms: { type: Boolean, default: false }
+        },
+        privacy: {
+            profileVisibility: {
+                type: String,
+                enum: ['public', 'followers', 'private'],
+                default: 'public'
+            },
+            showEmail: { type: Boolean, default: false },
+            showLocation: { type: Boolean, default: true }
+        }
     },
     following: [{
         type: mongoose.Schema.Types.ObjectId,
@@ -105,7 +124,7 @@ userSchema.methods.comparePassword = async function(candidatePassword) {
     } catch (error) {
         throw error;
     }
-});
+};
 
 // Instance method to generate password reset token
 userSchema.methods.createPasswordResetToken = function() {

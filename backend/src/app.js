@@ -14,6 +14,7 @@ const searchRoutes = require('./routes/search.routes');
 const socialRoutes = require('./routes/social.routes');
 const notificationRoutes = require('./routes/notification.routes');
 const aiRoutes = require('./routes/ai.routes');
+const videoRoutes = require('./routes/video.routes');
 
 // Import middleware
 const { errorHandler } = require('./middlewares/error.middleware');
@@ -76,6 +77,7 @@ app.use('/api/search', searchRoutes);
 app.use('/api/social', socialRoutes);
 app.use('/api/notifications', notificationRoutes);
 app.use('/api/ai', aiRoutes);
+app.use('/api/video', videoRoutes);
 
 // 404 handler
 app.use('*', (req, res) => {

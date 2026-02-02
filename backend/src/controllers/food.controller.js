@@ -31,11 +31,30 @@ async function createFood(req, res) {
 }
 
 async function getFoodItems(req, res) {
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 10;
+    const skip = (page - 1) * limit;
+
     const foodItems = await foodModel.find({})
+        .populate('foodPartner', 'name logo rating')
+        .sort({ createdAt: -1 })
+        .skip(skip)
+        .limit(limit);
+
+    const total = await foodModel.countDocuments({});
+    const totalPages = Math.ceil(total / limit);
 
     res.status(200).json({
         message: "Food items fetched successfully",
-        foodItems
+        foodItems,
+        pagination: {
+            currentPage: page,
+            totalPages,
+            totalItems: total,
+            itemsPerPage: limit,
+            hasNext: page < totalPages,
+            hasPrev: page > 1
+        }
     })
 }
 
