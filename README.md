@@ -219,6 +219,4 @@ This project is licensed under the ISC License - see the LICENSE file for detail
 
 For support, email support@reeldine.com or join our Discord community.
 
----
-
 **Made with ❤️ for food lovers, by food lovers**
